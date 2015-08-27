@@ -1,0 +1,3 @@
+class NSApplication
+
+end
