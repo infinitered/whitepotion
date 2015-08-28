@@ -10,7 +10,7 @@ module RubyMotionQuery
       if (@sdk_event_or_recognizer = VIEW_GESTURES[event])
         @gesture = true
         @custom_event = false
-      elsif sender.is_a?(NSControl)
+      elsif sender.is_a?(NSControl) && event == :rmq_osx_trigger_event
         @gesture = false
         @custom_event = false
       else

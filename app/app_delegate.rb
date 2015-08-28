@@ -23,7 +23,19 @@ class MyWindowScreenStylesheet < RubyMotionQuery::Stylesheet
 
   def text(st)
     st.frame = { centered: :both, w: 300, h: 30 }
-    st.placeholder = 'hide there !'
+    st.placeholder = 'hi there !'
+  end
+
+  def stepper(st)
+    st.min_value = 0
+    st.max_value = 10
+    st.frame = {l: 10, t: 50, w: 100, h: 30}
+  end
+
+  def combobox(st)
+    st.items = %w(roses are red)
+    st.size_to_fit
+    st.frame = {l: 10, t: 80, w: 100}
   end
 end
 
@@ -32,8 +44,12 @@ class MyWindowScreen < ProMotion::WindowScreen
 
   def on_load
     append(NSTextField, :label)
+    append(NSStepper, :stepper).on do |st|
+      rmq.find(:label).data = st.doubleValue.to_s
+    end.data(3)
+    append(NSComboBox, :combobox)
     append(NSTextField, :text)
-    append(NSButton, :button).on(:click) do
+    append(NSButton, :button).on do
       app.alert(message: 'Hello Alert', title: 'Alert !', style: :critical, window: self) do |result|
         mp "click with #{result}"
       end
@@ -41,7 +57,7 @@ class MyWindowScreen < ProMotion::WindowScreen
   end
 
   def window_frame
-    [[200, 200], [400, 400]]
+    [[200, 400], [600, 600]]
   end
 
 end

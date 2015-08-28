@@ -22,6 +22,7 @@ module RubyMotionQuery
           case view
             when NSTextField then view.setStringValue new_data
             when NSButton then view.title = new_data
+            when NSSlider then view.doubleValue = new_data
             # TODO, finish
           end
         end
@@ -32,6 +33,7 @@ module RubyMotionQuery
           case view
           when NSTextField then view.stringValue
           when NSButton then view.title
+          when NSSlider then view.doubleValue
           # TODO, finish
           end
         end

@@ -87,7 +87,8 @@ module RubyMotionQuery
     # rmq(button).on(:tap, taps_required: 2) do |sender|
     #   puts 'tapped'
     # end
-    def on(event, args = {}, &block)
+    # TODO change doc for nil event
+    def on(event=:rmq_osx_trigger_event, args = {}, &block)
       selected.each do |view|
         events(view).on(view, event, args, &block)
       end

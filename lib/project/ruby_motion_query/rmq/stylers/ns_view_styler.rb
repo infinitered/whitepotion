@@ -178,6 +178,10 @@ module RubyMotionQuery
         end
       end
 
+      def size_to_fit
+        view.sizeToFit
+      end
+
       def bounds=(value)
         RubyMotionQuery::Rect.update_view_bounds(view, value)
       end

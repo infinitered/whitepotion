@@ -10,8 +10,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    MotionLocalize (0.0.2)
-      motion-yaml (>= 1.4)
+    MotionLocalize (0.0.3)
     activesupport (4.2.4)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
