@@ -4,7 +4,7 @@ module ProMotion
     attr_accessor :screens
 
     def applicationDidFinishLaunching(notification)
-      did_launch(notification) if respond_to?(:did_launch)
+      on_launch(notification) if respond_to?(:on_launch)
     end
 
     def applicationWillFinishLaunching(notification)
@@ -15,16 +15,16 @@ module ProMotion
       will_terminate(notification) if respond_to?(:will_terminate)
     end
 
-    def applicationShouldTerminate(application)
-      should_terminate(application) if respond_to?(:will_terminate)
+    def applicationShouldTerminate?(application)
+      should_terminate?(application) if respond_to?(:should_terminate?)
     end
 
     def applicationShouldTerminateAfterLastWindowClosed(application)
-      should_terminate_window_closed(application) if respond_to?(:should_terminate_window_closed)
+      should_terminate_window_closed?(application) if respond_to?(:should_terminate_window_closed?)
     end
 
     def applicationWillBecomeActive(notification)
-      will_become_active(notification) if respond_to?(:will_become_active)
+      on_active(notification) if respond_to?(:on_active)
     end
 
     def applicationDidBecomeActive(notification)
@@ -36,7 +36,7 @@ module ProMotion
     end
 
     def applicationDidResignActive(notification)
-      did_resign_active(notification) if respond_to?(:did_resign_active)
+      on_resign(notification) if respond_to?(:on_resign)
     end
 
     def applicationWillHide(notification)
@@ -44,7 +44,7 @@ module ProMotion
     end
 
     def applicationDidHide(notification)
-      did_hide(notification) if respond_to?(:did_hide)
+      on_hide(notification) if respond_to?(:on_hide)
     end
 
     def applicationWillUnhide(notification)
@@ -52,7 +52,7 @@ module ProMotion
     end
 
     def applicationDidUnhide(notification)
-      did_unhide(notification) if respond_to?(:did_unhide)
+      on_unhide(notification) if respond_to?(:on_unhide)
     end
 
     def applicationShouldHandleReopen(application, hasVisibleWindows: flag)
@@ -60,7 +60,7 @@ module ProMotion
     end
 
     def applicationDidUpdate(notification)
-      did_update(notification) if respond_to?(:did_update)
+      on_update(notification) if respond_to?(:on_update)
     end
 
     def applicationWillUpdate(notification)
