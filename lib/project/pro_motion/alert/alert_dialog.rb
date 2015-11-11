@@ -8,7 +8,7 @@ class AlertDialog < NSAlert
         title: nil,
         style: :information,
         show: true,
-        buttons: ['OK'._, 'Cancel'._],
+        buttons: ['OK', 'Cancel'],
         view: nil,
         window: nil,
         icon: nil
