@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    whitepotion (0.0.1)
+    whitepotion (0.0.4)
       MotionLocalize
       cdq
       motion_print
@@ -45,8 +45,9 @@ PLATFORMS
 DEPENDENCIES
   MotionLocalize
   cdq
+  motion_print
   newclear
   whitepotion!
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

@@ -23,7 +23,7 @@ module RubyMotionQuery
             when NSTextField then view.setStringValue new_data
             when NSButton then view.title = new_data
             when NSSlider then view.doubleValue = new_data
-            when NSControlStyler then view.dateValue = new_data
+            when RubyMotionQuery::Stylers::NSControlStyler then view.dateValue = new_data
             when NSImageView then view.image = new_data
             # TODO, finish
           end
@@ -36,7 +36,7 @@ module RubyMotionQuery
           when NSTextField then view.stringValue
           when NSButton then view.title
           when NSSlider then view.doubleValue
-          when NSControlStyler then view.dateValue
+          when RubyMotionQuery::Stylers::NSControlStyler then view.dateValue
           when NSImageView then view.image
           # TODO, finish
           end

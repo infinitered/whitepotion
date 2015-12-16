@@ -6,3 +6,4 @@ gem "cdq"
 #gem "sugarcube", require: 'sugarcube-repl'
 gem "newclear"
 gem "MotionLocalize"
+# gem 'motion_print'

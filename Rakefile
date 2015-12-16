@@ -10,8 +10,8 @@ Bundler.require
 
 Motion::Project::App.setup do |app|
   app.name = 'WhitePotion'
-  app.copyright = 'Copyright © 2015 YOUR COMPANY. All rights reserved.'
-
+  # app.copyright = 'Copyright © 2015 YOUR COMPANY. All rights reserved.'
   app.identifier = 'be.michotte.whitepotion'
+  app.codesign_certificate = '3rd Party Mac Developer Application: YOUR NAME HERE'
   #app.icon = 'Icon.icns'
 end
