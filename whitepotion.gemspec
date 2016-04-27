@@ -4,23 +4,21 @@ require "project/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "whitepotion"
-  spec.authors       = ["Benjamin Michotte"]
-  spec.email         = ["bmichotte@gmail.com"]
+  spec.authors       = ["Benjamin Michotte", "Andrew Havens"]
+  spec.email         = ["bmichotte@gmail.com", "email@andrewhavens.com"]
   spec.description   = %q{WhitePotion - Just like RedPotion, but for OS X}
-  spec.summary       = %q{WhitePotion - Just like RedPotion, but for OS X. The best combination of RubyMotion tools and libraries for OS X}
+  spec.summary       = %q{WhitePotion - Just like RedPotion, but for OS X. The best combination of RubyMotion tools and libraries for OS X.}
   spec.homepage      = "https://github.com/bmichotte/whitepotion"
   spec.license       = "MIT"
 
   files = []
-  files << 'README.md'
-  files.concat(Dir.glob('lib/**/*.rb'))
-  files.concat(Dir.glob('templates/**/*.rb'))
+  files << "README.md"
+  files.concat(Dir.glob("lib/**/*.rb"))
+  files.concat(Dir.glob("templates/**/*.rb"))
   spec.files         = files
 
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  #spec.executables   << 'bluepotion'
-  #spec.executables   << 'bluepotion_add_line_numbers'
-  #spec.executables   << 'bluepotion_remove_line_numbers'
+  spec.executables << "whitepotion"
   spec.require_paths = ["lib"]
   spec.version       = WhitePotion::VERSION
 
@@ -28,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "motion_print"
   spec.add_runtime_dependency "MotionLocalize"
   spec.add_runtime_dependency "rake"
+  spec.add_runtime_dependency "thor", "~> 0.19.1"
 end

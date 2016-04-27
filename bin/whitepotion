@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+require "thor"
+
+module WhitePotion
+  class CLI < Thor
+    include Thor::Actions
+
+    source_root File.join(File.dirname(__FILE__), "templates")
+
+    desc "new APP_NAME", "Generate a new WhitePotion app."
+    method_option menu_bar_app: false
+    attr_reader :app_name
+
+    def new(app_name)
+      @app_name = app_name
+      directory "app", "#{app_name}/app"
+      template "Gemfile", "#{app_name}/Gemfile"
+      template "Rakefile", "#{app_name}/Rakefile"
+      template "README.md", "#{app_name}/README.md"
+    end
+  end
+end
+
+WhitePotion::CLI.start(ARGV)
