@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require "motion/project/template/osx"
+
+require "bundler"
+Bundler.require
+
+Motion::Project::App.setup do |app|
+  # Use `rake config` to see full list of project settings.
+  app.name = "<%= app_name %>"
+  app.identifier = "com.your_domain_here.<%= app_name %>"
+end
